@@ -11,3 +11,27 @@ gitのインストールは、こちら。
 [Git - Downloads](https://git-scm.com/downloads)
 
 ### flourish用CSV作成手順
+```
+git clone https://github.com/dokikudai/conv-csv.git
+
+cd conv_csv/to_flourish
+
+# curlコマンドがある方はさくっと以下でダウンロード
+# ない方は以下URLより手動ダウンロードし、conv_csv/to_flourish/ に配置する
+# https://www.e-stat.go.jp/stat-search/file-download?statInfId=000031524010&fileKind=1
+curl -H "Referer: https://www.e-stat.go.jp" \
+  "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000031524010&fileKind=1" > c01.csv
+
+bash ./csv_conv.sh
+
+# 以下のcsvファイルが作成されるので flourish で利用
+ls -al ./after_c01.csv
+```
+
+### Let's go flourish
+https://flourish.studio/
+
+## 参考
+以下は after_c01.csv を取り込んだ flourish サンプルです。  
+https://public.flourish.studio/visualisation/1570076/  
+このflourishデータは自由にコピペ（Duplicate and edit）していただいて構いません。
